@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project( LaneDetection )
+include_directories(include)
 find_package( OpenCV REQUIRED )
-add_executable( LaneDetection LaneDetection.cpp )
+file(GLOB SOURCES "src/*.cpp")
+add_executable( LaneDetection ${SOURCES} )
 target_link_libraries( LaneDetection ${OpenCV_LIBS} )
